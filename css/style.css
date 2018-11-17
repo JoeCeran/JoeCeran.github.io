@@ -51,7 +51,11 @@ html {
 
 
 body {
+<<<<<<< HEAD
     background-image: url("../Images/gravel.png") ;
+=======
+    background-image: url("joeceran.github/images/gravel.png") ;
+>>>>>>> caa2aaa8e05ac8d590ab628210e7bb19ae9d75a5
     margin: 0 auto;
     min-height: 87%;
     position: relative;

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+                <meta charset="UTF-8">
+                <title>Word Guessing Game</title>
+                <link rel="stylesheet"  type="text/css" href="css/WordGamestyle.css">
+</head>
+
+
+
+<body>
+
+<script type="text/javascript">
+
+var score = 0;
+var i;   
+var words = ["usa"];
+var words2 = ["J","A","P","A","N"];
+const lengths = words.length;
+var invalid = ["0","1","2","3","4","5","6","7","8","9","Enter","[","]","Tab","CapsLock", 
+"Shift","ContrOl","Alt"];
+var used = [];
+var usedwrong = [];
+var guesses = words.length + 3 ; 
+var index;
+var guess;
+var guessed;
+
+document.onkeyup = function(event) {
+
+//guess = event.key;
+//guessed = guess.toUpperCase();
+console.log(guessed);
+console.log(used);
+
+
+        if (event.key = invalid.includes(event.key)) {
+                alert("please enter letters only!");
+                }    
+                else if (event.key = words[0].includes(event.key) && event.key != used.includes(event.key)) {
+                        alert("you pressed " + event.key + " which is in the word!");
+                        used.push(event.key);
+                        words.splice(event.key, 1);
+                        if (used.length == 6){
+                                score++;
+                        }
+                }
+                else if (event.key = used.includes(event.key) && event.key != words.includes(event.key)) {
+                        alert("you pressed " + event.key + " which has already been used!");
+                }               
+                else if (event.key = usedwrong.includes(event.key)){
+                        guessed = event.key.toUpperCase();
+                        alert("you pressed " + event.key + " which has already been used!");
+                }
+                else if (event.key != words.includes(event.key) && event.key != invalid.includes(event.key) && event.key != used.includes(event.key) && event.key != usedwrong.includes(event.key) ){
+                        guessed = event.key.toUpperCase();
+                        alert("you pressed " + event.key + " which is NOT in the word!");
+                        usedwrong.push(event.key);
+                        guesses = guesses - 1;
+                }  
+                
+        
+        if (used.length == lengths){
+        alert("you win!");
+        }
+        
+                else if (guesses < 1) {
+                alert("you lose!");   
+                }
+
+        document.getElementById("img").src="Images/USA.png";
+        document.getElementById("score").innerHTML = "Score: " + score;
+        document.getElementById("guessesleft").innerHTML = "Guesses left: " + guesses;
+        document.getElementById("current").innerHTML = "Current Word: " + used;
+        document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;
+
+}
+
+
+
+
+</script>
+
+
+<h1>Word Guessing Game: Guess The Flag!</h1>
+<button>Reset!</button>
+<div class="box">
+        <img id="img" src="Images/QuestionMark.png">
+</div>
+<div class="box2">
+<p id="score">Score: </p>
+<br>
+<p id="guessesleft">Guesses left: </p>
+<br>
+<p id="current">Current Word: </p>
+<br>
+<p id="latter">Letters already used:<br></p>
+<br>
+<p id="wrong1"></p>
+</div>
+
+
+</body>

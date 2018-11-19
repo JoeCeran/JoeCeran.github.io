@@ -9,11 +9,23 @@ h1 {
     line-height: 100px;
 }
 
+h2 {
+    color: white;
+    text-align: center;
+}
+
 p {
     color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dash {
+    color: white;
     display: inline-block;
-    margin: 25px;
-    padding-top: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: center;
 }
 
 body {

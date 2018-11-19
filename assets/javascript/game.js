@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-                <meta charset="UTF-8">
-                <title>Word Guessing Game</title>
-                <link rel="stylesheet"  type="text/css" href="assets/css/style.css">
-</head>
-
-
-
-<body>
-
-<script type="text/javascript">
-
 var score = 0;
 var round = Math.floor(Math.random() * 7);
 var i = 0;   
@@ -144,22 +129,3 @@ underDash();
 rounds();
 
 }
-
-</script>
-
-<h1>Word Guessing Game: Guess The Flag!</h1>
-<div class="box">
-        <img id="img" src="Images/QuestionMark.png">
-</div>
-<div class="box2">
-<h2 id="Text">Press any key to start!</h2>
-<p id="score">Score: </p>
-<p id="guessesleft">Guesses left: </p>
-<p id="currents">Current Word: </p>
-<p id="current"></p>
-<p id="latter">Letters already used:<br></p>
-<p id="wrong1"></p>
-</div>
-
-
-</body>

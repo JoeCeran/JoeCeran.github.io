@@ -51,7 +51,7 @@ html {
 
 
 body {
-    background-image: url("../assets/Images/gravel.png") ;
+    background-image: url("../Images/gravel.png") ;
     margin: 0 auto;
     min-height: 100%;
     position: relative;

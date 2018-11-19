@@ -1,165 +1,63 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
+        <head>
                 <meta charset="UTF-8">
-                <title>Word Guessing Game</title>
-                <link rel="stylesheet"  type="text/css" href="assets/css/style.css">
-</head>
-
-
+                <title>About</title>
+                <link rel="stylesheet" media="screen and (min-width: 900px)" type="text/css" href="css/style.css">
+                <link rel="stylesheet" media="screen and (max-width: 768px)" type="text/css" href="css/medstyle.css">
+                <link rel="stylesheet" media="screen and (max-width: 640px)" type="text/css" href="css/smallstyle.css">
+              </head>
 
 <body>
-
-<script type="text/javascript">
-
-var score = 0;
-var round = Math.floor(Math.random() * 7);
-var i = 0;   
-var words = ["usa", "japan", "italy", "germany", "england", "china", "scotland"];
-const lengths = words.length;
-var invalid = ["0","1","2","3","4","5","6","7","8","9","enter","[","]","tab","capslock", 
-"shift","control","alt"];
-var used = [];
-var usedwrong = [];
-var guesses = 6 ; 
-var index;
-var j = round;
-
-function underDash(){
-if (i < words[j].length) {
-        for (i = 0; i < words[j].length; i++) {
-                var targetDiv = document.getElementById("current");
-                var newDiv = document.createElement("div");
-                newDiv.textContent = "_";
-                newDiv.setAttribute("class", "dash");
-                newDiv.setAttribute("id", "current" + (i+1))
-                targetDiv.appendChild(newDiv);
-        } 
-}
-}
-
-function rounds(){
-//Selecting which flag to show
-if (round == 0) {
-        document.getElementById("img").src="assets/images/USA.png";
-        }
-        else if (round == 1){
-        document.getElementById("img").src="assets/images/Japan.png";
-        }
-        else if (round == 2){
-        document.getElementById("img").src="assets/images/Italy.png";
-        }
-        else if (round == 3){
-        document.getElementById("img").src="assets/images/Germany.png";
-        }
-        else if (round == 4){
-        document.getElementById("img").src="assets/images/England.png";
-        }
-        else if (round == 5){
-        document.getElementById("img").src="assets/images/China.png";
-        }
-        else if (round == 6){
-        document.getElementById("img").src="assets/images/Scotland.png";
-        }
-}
+    <header>
+            <div class="nav">
+                </div> 
+</header>
 
 
+    <div class="head">
+        Joe Cerankowski
+    </div>
 
-
-document.onkeyup = function(event) {
-
-        j = round;
-        var letter = event.key.toLowerCase();
-
-        if (i < words[j].length) {
-                underDash();
-        }
-
-        //Win the grand prize
-        if (score >= 6) {
-        document.getElementById("Text").innerHTML = "You Win!";
-        document.getElementById("img").src="assets/images/Win.png";
-        //new Audio().play
-        return false;
-        }
-
-                if (words[j].indexOf(letter) > -1) {
-                        var x = words[j].indexOf(letter) + 1;
-                        var y = 0;
-                        document.getElementById("current" + x).innerHTML = letter; 
-                        used.push(letter);
-                        words[j] = words[j].replace(letter," ")
-                        }
-                
-                else if (invalid.indexOf(letter) > -1) {
-                        alert("please enter letters only!");
-                }   
-                else if (used.indexOf(letter) > -1) {
-                        return false;
-                }               
-                else if (usedwrong.indexOf(letter) > -1) {
-                        return false;
-                }
-                else  {
-                        usedwrong.push(letter);
-                        guesses = guesses - 1;
-                } 
-
-        //Declaring a victory      
-        if (used.length == words[j].length){
-                score++;
-                for(i = 0; i < words[j].length; i++){
-                used.splice(i);
-                }
-                for(i = 0; i < words[j].length; i++){
-                usedwrong.splice(i);
-                }
-                words = ["usa", "japan", "italy", "germany", "england", "china", "scotland"];
-                guesses = 6; 
-                for(i = 0; i < words[j].length; i++){
-                document.getElementById("current" + (i+1)).remove();
-                }
-                i = 0;
-                round = Math.floor(Math.random() * 7);
-                return score;
-        }
-
-        //Declaring a loss
-        if (guesses < 1) {
-                alert("you lose!");   
-        }
-
-        rounds();
-
-        document.getElementById("score").innerHTML = "Score: " + "<br>" + "<br>" + score;
-        document.getElementById("guessesleft").innerHTML = "Guesses left: " + "<br>" + "<br>" + guesses;
-        //document.getElementById("current").innerHTML = "Current Word: ";
-        document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;
+    
+    <div class="navbar">
         
-}
+        <li class="last-child"><a href="index.html">About</a></li>
+            <li><a href="Port.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+           
+       
+    </div>
+    </div>
 
-function main() {
-underDash();
-rounds();
+    <div class="main">
+        <h1>
+            About Me
+        </h1>
+        <hr>
+        <img id="photo" src="https://www.ice-energy.com/wp-content/uploads/2016/03/header-home.jpg">
+        <p> Lorem ipsum augue metus fringilla donec quis dictum ipsum suspendisse, vivamus senectus elementum bibendum 
+        placerat donec nostra suscipit imperdiet condimentum, aptent praesent taciti sagittis sodales consectetur cras 
+        luctus tempus ad proin cursus in justo habitant. </p>
+        <p>
+                Aliquam eget neque curae id aliquet sagittis quisque dui, libero condimentum nunc rutrum 
+                habitant placerat adipiscing quisque lobortis, ut malesuada ligula nulla varius habitant nam neque 
+                ad augue pretium dictumst pretium tellus metus sagittis.
+        </p>
+        <p>Lorem ipsum augue metus fringilla donec quis dictum ipsum suspendisse, vivamus senectus elementum bibendum 
+        placerat donec nostra suscipit imperdiet condimentum, aptent praesent taciti sagittis sodales consectetur cras 
+        luctus tempus ad proin cursus in justo habitant. </p>
+        <p>
+                Aliquam eget neque curae id aliquet sagittis quisque dui, libero condimentum nunc rutrum 
+                habitant placerat adipiscing quisque lobortis, ut malesuada ligula nulla varius habitant nam neque 
+                ad augue pretium dictumst pretium tellus metus sagittis.
+        </p>
+    </div>
 
-}
 
-</script>
-
-<h1>Word Guessing Game: Guess The Flag!</h1>
-<div class="box">
-        <img id="img" src="assets/images/QuestionMark.png">
-</div>
-<div class="box2">
-<h2 id="Text">Press any key to start!</h2>
-<p id="score">Score: </p>
-<p id="guessesleft">Guesses left: </p>
-<p id="currents">Current Word: </p>
-<p id="current"></p>
-<p id="latter">Letters already used:<br></p>
-<p id="wrong1"></p>
-</div>
-
-
+    <footer>
+            Copyright @ 2018
+    </footer>
+    
 </body>

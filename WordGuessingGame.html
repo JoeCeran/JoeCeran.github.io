@@ -19,7 +19,7 @@ var i = 0;
 var words = ["usa", "japan", "italy", "germany", "england", "china", "scotland"];
 const lengths = words.length;
 var invalid = ["0","1","2","3","4","5","6","7","8","9","enter","[","]","tab","capslock", 
-"shift","control","alt"];
+"shift","control","alt", ".", "," , "/", "-", "=", "'",";", "backspace", "`"];
 var used = [];
 var usedwrong = [];
 var guesses = 6 ; 
@@ -30,12 +30,12 @@ var j = round;
 function underDash(){
 if (i < words[j].length) {
         for (i = 0; i < words[j].length; i++) {
-                var targetDiv = document.getElementById("current");
-                var newDiv = document.createElement("div");
-                newDiv.textContent = "_";
-                newDiv.setAttribute("class", "dash");
-                newDiv.setAttribute("id", "current" + (i+1))
-                targetDiv.appendChild(newDiv);
+                var targetP = document.getElementById("current");
+                var newP = document.createElement("div");
+                newP.textContent = "_";
+                newP.setAttribute("class", "dash");
+                newP.setAttribute("id", "current" + (i+1))
+                targetP.appendChild(newP);
         } 
 }
 }
@@ -67,7 +67,8 @@ if (round == 0) {
 
 function winRound() {
 if (used.length == words[j].length){
-        round = Math.floor(Math.random() * 7);        
+        round = Math.floor(Math.random() * 7);
+        underDash();
         score++;
         for(i = 0; i < words[j].length; i++){
         used.splice(i);
@@ -86,6 +87,17 @@ if (used.length == words[j].length){
         }
 }
 
+function winGame() {
+        document.getElementById("Text").innerHTML = "You Win!";
+        document.getElementById("img").src="assets/images/Win.png";
+        new Audio("assets/sounds/Woohoo.wav").play
+        return false;
+}
+
+
+
+       
+
 document.onkeyup = function(event) {
 
         j = round;
@@ -96,11 +108,11 @@ document.onkeyup = function(event) {
         }
 
         //Win the grand prize
-        if (score >= 6) {
-        document.getElementById("Text").innerHTML = "You Win!";
-        document.getElementById("img").src="assets/images/Win.png";
-        //new Audio().play
-        return false;
+        if (score > 1 ) {
+                document.getElementById("Text").innerHTML = "You Win!";
+                document.getElementById("img").src="assets/images/Win.png";
+                new Audio("assets/sounds/Woohoo.wav").play
+                return false;
         }
                 //compares the key to letters of the round's country flag
                 if (words[j].indexOf(letter) > -1) {
@@ -134,29 +146,26 @@ document.onkeyup = function(event) {
         if (guesses < 1) {
                 alert("you lose!");   
         }
-
-        rounds();
+        
+        //Deciding what word and flag will be displayed
+        rounds();    
 
         document.getElementById("score").innerHTML = "Score: " + "<br>" + "<br>" + score;
         document.getElementById("guessesleft").innerHTML = "Guesses left: " + "<br>" + "<br>" + guesses;
-        //document.getElementById("current").innerHTML = "Current Word: ";
+        //document.getElementById("current").innerHTML = "Current Word: " ;
         document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;
-        
-}
-
-function main() {
-underDash();
-rounds();
 
 }
+
 
 </script>
 
 <h1>Word Guessing Game: Guess The Flag!</h1>
+<a href="index.html"><h3>Got back to Index</h3></a>
 <div class="box">
         <img id="img" src="assets/images/QuestionMark.png">
 </div>
-<div class="box2">
+<div class="box">
 <h2 id="Text">Press any key to start!</h2>
 <p id="score">Score: </p>
 <p id="guessesleft">Guesses left: </p>

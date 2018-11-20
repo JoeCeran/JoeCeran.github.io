@@ -57,7 +57,7 @@ img {
     position: relative;
     width: 250px;
     height: 200px;
-    margin: 60px;
+    margin: 35px;
     border: solid;
     border-color: white;
     border-radius: 20px;
@@ -68,10 +68,10 @@ img {
     position: relative;
     border: solid;
     border-color: white;
-    left: 355px;
-    top: -50px;
+    left: 125px;
+    top: -20px;
     margin: 5px;
-    width: 25%;
+    width: 35%;
     height: 500px;
     min-height: 100px;
     border-radius: 20px;

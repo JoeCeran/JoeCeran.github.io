@@ -95,7 +95,7 @@ document.onkeyup = function(event) {
         }
 
         //Win the grand prize
-        if (score > 1 ) {
+        if (score > 5 ) {
                 document.getElementById("Text").innerHTML = "You Win!";
                 document.getElementById("img").src="assets/images/Win.png";
                 new Audio("assets/sounds/Woohoo.wav").play

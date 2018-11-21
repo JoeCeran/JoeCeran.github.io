@@ -2,6 +2,7 @@
 
 var score = 0;
 var round = Math.floor(Math.random() * 7);
+var firstRound = true;
 var i = 0;   
 var words = ["usa", "japan", "italy", "germany", "england", "china", "scotland"];
 const lengths = words.length;
@@ -12,6 +13,7 @@ var usedwrong = [];
 var guesses = 6 ; 
 var index;
 var j = round;
+var nextRound;
 
 //printing out the underscores
 function underDash(){
@@ -52,53 +54,43 @@ if (round == 0) {
         }
 }
 
+//resets everything for the next round after you win
 function winRound() {
-if (used.length == words[j].length){
         round = Math.floor(Math.random() * 7);
-        underDash();
         score++;
-        for(i = 0; i < words[j].length; i++){
-        used.splice(i);
-        }
-        for(i = 0; i < words[j].length; i++){
-        usedwrong.splice(i);
-        }
         words = ["usa", "japan", "italy", "germany", "england", "china", "scotland"];
         document.getElementById("Text").innerHTML = words[j] + " was correct!";
         guesses = 6; 
         for(i = 0; i < words[j].length; i++){
-        document.getElementById("current" + (i+1)).remove();
+                document.getElementById("current" + (i+1)).remove();
+                }
+        for(i = 0; i < words[j].length; i++){
+                used.splice(i);
+                }
+        for(i = 0; i < words[j].length; i++){
+                usedwrong.splice(i);
         }
         i = 0;
         return score;
         }
-}
-
-function winGame() {
-        document.getElementById("Text").innerHTML = "You Win!";
-        document.getElementById("img").src="assets/images/Win.png";
-        new Audio("assets/sounds/Woohoo.wav").play
-        return false;
-}
 
 
-
-       
+        
 
 document.onkeyup = function(event) {
 
         j = round;
         var letter = event.key.toLowerCase();
 
-        if (i < words[j].length) {
-                underDash();
-        }
+        //writes the blank spaces
+        underDash();
 
         //Win the grand prize
         if (score > 5 ) {
                 document.getElementById("Text").innerHTML = "You Win!";
                 document.getElementById("img").src="assets/images/Win.png";
-                new Audio("assets/sounds/Woohoo.wav").play
+                var audio = new Audio("assets/sounds/Woohoo.mp3");
+                audio.play();
                 return false;
         }
                 //compares the key to letters of the round's country flag
@@ -126,8 +118,11 @@ document.onkeyup = function(event) {
                         guesses = guesses - 1;
                 } 
 
-        //Declaring a victory    
+        //Declaring a victory  
+        if (used.length == words[j].length){  
         winRound();
+        }
+
 
         //Declaring a loss
         if (guesses < 1) {
@@ -139,7 +134,6 @@ document.onkeyup = function(event) {
 
         document.getElementById("score").innerHTML = "Score: " + "<br>" + "<br>" + score;
         document.getElementById("guessesleft").innerHTML = "Guesses left: " + "<br>" + "<br>" + guesses;
-        //document.getElementById("current").innerHTML = "Current Word: " ;
         document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;
 
 }

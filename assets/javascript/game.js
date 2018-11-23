@@ -14,20 +14,25 @@ var guesses = 6 ;
 var index;
 var j = round;
 var nextRound;
+var targetP;
+var newP;
 
 //printing out the underscores
 function underDash(){
 if (i < words[j].length) {
         for (i = 0; i < words[j].length; i++) {
-                var targetP = document.getElementById("current");
-                var newP = document.createElement("div");
-                newP.textContent = "_";
+                targetP = document.getElementById("current");
+                newP = document.createElement("div");
                 newP.setAttribute("class", "dash");
                 newP.setAttribute("id", "current" + (i+1))
+                newP.textContent = "_";
+                console.log(newP);
                 targetP.appendChild(newP);
+                
         } 
 }
 }
+
 
 //Selecting which flag to show
 function rounds(){
@@ -126,7 +131,7 @@ document.onkeyup = function(event) {
 
         //Declaring a loss
         if (guesses < 1) {
-                alert("you lose!");   
+        alert("you lose!");   
         }
         
         //Deciding what word and flag will be displayed
@@ -134,8 +139,13 @@ document.onkeyup = function(event) {
 
         document.getElementById("score").innerHTML = "Score: " + "<br>" + "<br>" + score;
         document.getElementById("guessesleft").innerHTML = "Guesses left: " + "<br>" + "<br>" + guesses;
+        //document.getElementById("current").innerHTML = newP;
         document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;
+
 
 }
 
-
+        document.getElementById("score").innerHTML = "Score: " + "<br>" + "<br>" + score;
+        document.getElementById("guessesleft").innerHTML = "Guesses left: " + "<br>" + "<br>" + guesses;
+        //document.getElementById("current").innerHTML = newP;
+        document.getElementById("latter").innerHTML = "Letters already used: " + usedwrong;

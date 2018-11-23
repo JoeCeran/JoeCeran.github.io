@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+                <meta charset="UTF-8">
+                <title>Word Guessing Game</title>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="assets/css/RPGstyle.css">
+</head>
+
+
+
+<body>
+
+<script>
+    
+var obiWan = {
+    name: "Obi Wan",
+    hp: 120,
+    mp: 20,
+    attack: 10,
+    counterattack: 14,
+    val: "1"
+};
+
+var luke = {
+    name: "Luke Skywalker",
+    hp: 140,
+    mp: 25,
+    attack: 12,
+    counterattack: 16,
+    val: "2"
+};
+
+var vader = {
+    name: "Darth Vader",
+    hp: 120,
+    mp: 25,
+    attack: 12,
+    counterattack: 18,
+    val: "3"
+};
+
+var maul = {
+    name: "Darth Maul",
+    hp: 100,
+    mp: 25,
+    attack: 12,
+    counterattack: 15,
+    val: "4"
+};
+
+var playerChar;
+var enemyChar;
+var round = 0;
+
+
+
+
+$(document).ready(function() {
+
+var captainPlanet = $(".captain-planet");
+
+var audio = new Audio("assets/sounds/Theme.mp3");
+audio.play();
+
+    $(".normal-button").click(function() {
+        var player = eval($(this).attr("value"));
+        if (playerChar == undefined) {
+            playerChar = player;
+            for (var i = 0; i < 4; i++) {
+                if ("#"+(i+1) == "#1") {
+                    //$("#"+ 2).remove();
+                    $(this).animate({top: "40px"});
+                }
+                else if ("#"+(i+1) != "#1") {
+                    $("#"+(i+1)).animate({top: "230px", right: "170px"});
+                }
+            }
+            $("#head1").animate({bottom: "170px"});
+            $("#head2").animate({bottom: "70px"});
+            $("#head3").animate({top: "15px"});
+            console.log("You chose: " + playerChar.name);
+        }
+        else if (playerChar != undefined && enemyChar == undefined) {
+            enemyChar = player;
+            $(this).animate({opacity: 0.75, top: '500px'});
+            console.log("Your Enemy: " + enemyChar.name);
+            round++;
+            console.log("Round:" + round);
+        }
+        else  if (enemyChar != undefined) {
+            console.log("Selection has been completed. FIGHT!")
+        }
+    });
+
+    $(".fight-button").click(function() {
+    if (playerChar == undefined){
+        console.log("You need to select a player!");
+    }
+        else if (enemyChar == undefined) {
+            console.log("You need to select an enemy!");
+        }    
+            else {
+                playerChar.hp = playerChar.hp - enemyChar.counterattack;
+                enemyChar.hp = enemyChar.hp - playerChar.attack;
+                document.getElementById("battletext").innerHTML = playerChar.name + " attacks! " + playerChar.attack + " points of damage!";
+                document.getElementById("battletext2").innerHTML = enemyChar.name + " attacks back! " + enemyChar.counterattack + " points of damage!";
+                console.log(playerChar.name + ": " + playerChar.hp);
+                console.log(enemyChar.name + ": " + enemyChar.hp);
+                playerChar.attack += 10;
+                
+                if (round === 3 && enemyChar.hp <= 0) {
+                document.getElementById("battletext3").innerHTML = "You have won the game!!!";
+                $("#"+ enemyChar.val).remove();
+                }
+                    if (playerChar.hp <= 0 && enemyChar.hp <= 0) {
+                        document.getElementById("battletext3").innerHTML = "Double Knockout!!";
+                        $("#"+ playerChar.val).remove();
+                        $("#"+ enemyChar.val).remove();
+                        }
+                        else if (playerChar.hp <= 0) {
+                            document.getElementById("battletext3").innerHTML = "You lose! Game over!";
+                            $("#"+ playerChar.val).remove();
+                        }
+                            else if (enemyChar.hp <= 0 && round < 3) {
+                                document.getElementById("battletext3").innerHTML = "You have defeated " + enemyChar.name + ". choose your next opponent.";
+                                $("#"+ enemyChar.val).remove();
+                                enemyChar = undefined;
+                            }                
+            }
+    });      
+});
+
+</script>
+
+<button style="position: relative" value="obiWan" id="1" class="btn btn-dark btn-lg normal-button">Obi-Wan-Kenobi<br><img src="assets/images/ObiWan.PNG"></button>
+<button style="position: relative" value ="luke" id="2" class="btn btn-dark btn-lg normal-button">Luke Skywalker<br><img src="assets/images/LukeSkywalker.png"></button>
+<button style="position: relative" value ="vader" id="3" class="btn btn-dark btn-lg normal-button">Darth Vader<br><img src="assets/images/DarthVader.PNG"></button>
+<button style="position: relative" value ="maul" id="4" class="btn btn-dark btn-lg normal-button">Darth Maul<br><img src="assets/images/DarthMaul.PNG"></button>
+
+<h1 id="head1" style="position: relative" >Your character</h1>
+<br>
+<h1 id="head2" style="position:relative">Enemies available to attack</h1>
+<br>
+<h1 id="head3" style="position:relative">Fight section</h1>
+<button value="fight" class="btn bth-dark btn-lg fight-button">attack!</button>
+<h1 id="head4">Defender</h1>
+<br>
+<div id="battletext"></div>
+<div id="battletext2"></div>
+<div id="battletext3"></div>
+</body>
+</html>

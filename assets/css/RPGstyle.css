@@ -1,0 +1,34 @@
+h1{
+    color: white;
+}
+
+div{
+    color: white;
+}
+
+body{
+    background-image: url("../images/Background.PNG");
+    background-color: black;
+    background-size: 1700px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+
+.normal-button {
+    border-radius: 20px;
+    height: 140px;
+}
+
+.fight-button{
+    border-radius: 20px;
+}
+
+img {
+    height: 100px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+#battletext {
+    padding-top: 120px;
+}

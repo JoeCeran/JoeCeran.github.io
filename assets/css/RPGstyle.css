@@ -32,3 +32,10 @@ img {
 #battletext {
     padding-top: 120px;
 }
+
+#goBack {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    border-radius: 20px;
+}

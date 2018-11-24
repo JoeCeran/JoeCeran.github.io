@@ -61,33 +61,34 @@ $(document).ready(function() {
 
 var captainPlanet = $(".captain-planet");
 
-var audio = new Audio("assets/sounds/Theme.mp3");
-audio.play();
-
     $(".normal-button").click(function() {
         var player = eval($(this).attr("value"));
         if (playerChar == undefined) {
             playerChar = player;
             for (var i = 0; i < 4; i++) {
-                if ("#"+(i+1) == "#1") {
-                    //$("#"+ 2).remove();
+                if ((i+1) == playerChar.val) {
                     $(this).animate({top: "40px"});
+                    $(this).prop("disabled",true);
                 }
-                else if ("#"+(i+1) != "#1") {
-                    $("#"+(i+1)).animate({top: "230px", right: "170px"});
+                else if ((i+1) != playerChar.val) {
+                    $("#"+(i+1)).animate({top: "230px", });
                 }
             }
             $("#head1").animate({bottom: "170px"});
             $("#head2").animate({bottom: "70px"});
             $("#head3").animate({top: "15px"});
             console.log("You chose: " + playerChar.name);
+            console.log(player);
+            console.log(player == undefined);
         }
         else if (playerChar != undefined && enemyChar == undefined) {
             enemyChar = player;
-            $(this).animate({opacity: 0.75, top: '500px'});
+            $(this).animate({top: '500px'});
+            $(this).prop("disabled",true);
             console.log("Your Enemy: " + enemyChar.name);
             round++;
             console.log("Round:" + round);
+            console.log(player == undefined);
         }
         else  if (enemyChar != undefined) {
             console.log("Selection has been completed. FIGHT!")
@@ -150,5 +151,6 @@ audio.play();
 <div id="battletext"></div>
 <div id="battletext2"></div>
 <div id="battletext3"></div>
+<button id="goBack"><a href="Port.html">Go Back</a></button>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 <head>
                 <meta charset="UTF-8">
-                <title>Word Guessing Game</title>
+                <title>Star Wars RPG</title>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <link rel="stylesheet" type="text/css" href="assets/css/RPGstyle.css">
 </head>
@@ -61,12 +61,15 @@ $(document).ready(function() {
 
 var captainPlanet = $(".captain-planet");
 
+
+
     $(".normal-button").click(function() {
         var player = eval($(this).attr("value"));
         if (playerChar == undefined) {
             playerChar = player;
             for (var i = 0; i < 4; i++) {
                 if ((i+1) == playerChar.val) {
+                    $(this).append("<br>" + playerChar.hp);
                     $(this).animate({top: "40px"});
                     $(this).prop("disabled",true);
                 }
@@ -85,6 +88,7 @@ var captainPlanet = $(".captain-planet");
             enemyChar = player;
             $(this).animate({top: '500px'});
             $(this).prop("disabled",true);
+            $(this).append("<br>" + enemyChar.hp);
             console.log("Your Enemy: " + enemyChar.name);
             round++;
             console.log("Round:" + round);
@@ -103,16 +107,21 @@ var captainPlanet = $(".captain-planet");
             console.log("You need to select an enemy!");
         }    
             else {
+                var $text = $('#' + playerChar.val);
+                $text.html( $text.html().replace(playerChar.hp, "") ); 
+                var $text = $('#' + enemyChar.val);
+                $text.html( $text.html().replace(enemyChar.hp, "") ); 
                 playerChar.hp = playerChar.hp - enemyChar.counterattack;
                 enemyChar.hp = enemyChar.hp - playerChar.attack;
                 document.getElementById("battletext").innerHTML = playerChar.name + " attacks! " + playerChar.attack + " points of damage!";
                 document.getElementById("battletext2").innerHTML = enemyChar.name + " attacks back! " + enemyChar.counterattack + " points of damage!";
-                console.log(playerChar.name + ": " + playerChar.hp);
-                console.log(enemyChar.name + ": " + enemyChar.hp);
+                $("#"+ playerChar.val).append(playerChar.hp);    
+                $("#"+ enemyChar.val).append(enemyChar.hp);            
                 playerChar.attack += 10;
                 
                 if (round === 3 && enemyChar.hp <= 0) {
                 document.getElementById("battletext3").innerHTML = "You have won the game!!!";
+                
                 $("#"+ enemyChar.val).remove();
                 }
                     if (playerChar.hp <= 0 && enemyChar.hp <= 0) {

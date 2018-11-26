@@ -74,25 +74,19 @@ var captainPlanet = $(".captain-planet");
                     $(this).prop("disabled",true);
                 }
                 else if ((i+1) != playerChar.val) {
-                    $("#"+(i+1)).animate({top: "230px", });
+                    $("#"+(i+1)).animate({top: "240px", });
                 }
             }
             $("#head1").animate({bottom: "170px"});
             $("#head2").animate({bottom: "70px"});
             $("#head3").animate({top: "15px"});
-            console.log("You chose: " + playerChar.name);
-            console.log(player);
-            console.log(player == undefined);
         }
         else if (playerChar != undefined && enemyChar == undefined) {
             enemyChar = player;
             $(this).animate({top: '500px'});
             $(this).prop("disabled",true);
             $(this).append("<br>" + enemyChar.hp);
-            console.log("Your Enemy: " + enemyChar.name);
             round++;
-            console.log("Round:" + round);
-            console.log(player == undefined);
         }
         else  if (enemyChar != undefined) {
             console.log("Selection has been completed. FIGHT!")
@@ -101,12 +95,18 @@ var captainPlanet = $(".captain-planet");
 
     $(".fight-button").click(function() {
     if (playerChar == undefined){
-        console.log("You need to select a player!");
+        document.getElementById("battletext").innerHTML = "";
+        document.getElementById("battletext2").innerHTML = "";
+        document.getElementById("battletext3").innerHTML = "You need to select a player!";
     }
         else if (enemyChar == undefined) {
-            console.log("You need to select an enemy!");
+            document.getElementById("battletext").innerHTML = "";
+            document.getElementById("battletext2").innerHTML = "";
+            document.getElementById("battletext3").innerHTML = "You need to select an enemy!";
         }    
             else {
+                var audio = new Audio("assets/sounds/2 clash 4.wav");
+                audio.play();
                 var $text = $('#' + playerChar.val);
                 $text.html( $text.html().replace(playerChar.hp, "") ); 
                 var $text = $('#' + enemyChar.val);
@@ -115,28 +115,42 @@ var captainPlanet = $(".captain-planet");
                 enemyChar.hp = enemyChar.hp - playerChar.attack;
                 document.getElementById("battletext").innerHTML = playerChar.name + " attacks! " + playerChar.attack + " points of damage!";
                 document.getElementById("battletext2").innerHTML = enemyChar.name + " attacks back! " + enemyChar.counterattack + " points of damage!";
+                document.getElementById("battletext3").innerHTML = "";
                 $("#"+ playerChar.val).append(playerChar.hp);    
                 $("#"+ enemyChar.val).append(enemyChar.hp);            
                 playerChar.attack += 10;
                 
                 if (round === 3 && enemyChar.hp <= 0) {
+                document.getElementById("battletext").innerHTML = "";
+                document.getElementById("battletext2").innerHTML = "";
                 document.getElementById("battletext3").innerHTML = "You have won the game!!!";
-                
+                var audio2 = new Audio("assets/sounds/Swing02.wav");
+                audio2.play();
                 $("#"+ enemyChar.val).remove();
                 }
                     if (playerChar.hp <= 0 && enemyChar.hp <= 0) {
+                        document.getElementById("battletext").innerHTML = "";
+                        document.getElementById("battletext2").innerHTML = "";
                         document.getElementById("battletext3").innerHTML = "Double Knockout!!";
                         $("#"+ playerChar.val).remove();
                         $("#"+ enemyChar.val).remove();
                         }
                         else if (playerChar.hp <= 0) {
+                            document.getElementById("battletext").innerHTML = "";
+                            document.getElementById("battletext2").innerHTML = "";
                             document.getElementById("battletext3").innerHTML = "You lose! Game over!";
                             $("#"+ playerChar.val).remove();
+                            var audio2 = new Audio("assets/sounds/Swing02.wav");
+                            audio2.play();
                         }
                             else if (enemyChar.hp <= 0 && round < 3) {
+                                document.getElementById("battletext").innerHTML = "";
+                                document.getElementById("battletext2").innerHTML = "";
                                 document.getElementById("battletext3").innerHTML = "You have defeated " + enemyChar.name + ". choose your next opponent.";
                                 $("#"+ enemyChar.val).remove();
                                 enemyChar = undefined;
+                                var audio2 = new Audio("assets/sounds/Swing02.wav");
+                                audio2.play();
                             }                
             }
     });      

@@ -1,5 +1,6 @@
 h1{
     color: white;
+    font-family: fantasy;
 }
 
 div{
@@ -17,10 +18,13 @@ body{
 .normal-button {
     border-radius: 20px;
     height: 140px;
+    background-color: whitesmoke;
+    color: black;
 }
 
 .fight-button{
     border-radius: 20px;
+    background-color: whitesmoke;
 }
 
 img {

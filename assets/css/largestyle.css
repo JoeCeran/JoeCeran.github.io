@@ -189,7 +189,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-    color: 
+    color: blue;
 }
 
 .imagelink {

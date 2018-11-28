@@ -6,6 +6,8 @@
                 <title>Star Wars RPG</title>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <link rel="stylesheet" type="text/css" href="assets/css/RPGstyle.css">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 
@@ -17,7 +19,6 @@
 var obiWan = {
     name: "Obi Wan",
     hp: 120,
-    mp: 20,
     attack: 10,
     counterattack: 14,
     val: "1"
@@ -26,7 +27,6 @@ var obiWan = {
 var luke = {
     name: "Luke Skywalker",
     hp: 140,
-    mp: 25,
     attack: 12,
     counterattack: 16,
     val: "2"
@@ -34,8 +34,7 @@ var luke = {
 
 var vader = {
     name: "Darth Vader",
-    hp: 120,
-    mp: 25,
+    hp: 160,
     attack: 12,
     counterattack: 18,
     val: "3"
@@ -43,8 +42,7 @@ var vader = {
 
 var maul = {
     name: "Darth Maul",
-    hp: 100,
-    mp: 25,
+    hp: 150,
     attack: 12,
     counterattack: 15,
     val: "4"
@@ -59,33 +57,30 @@ var round = 0;
 
 $(document).ready(function() {
 
-var captainPlanet = $(".captain-planet");
-
-
-
     $(".normal-button").click(function() {
         var player = eval($(this).attr("value"));
         if (playerChar == undefined) {
             playerChar = player;
             for (var i = 0; i < 4; i++) {
                 if ((i+1) == playerChar.val) {
-                    $(this).append("<br>" + playerChar.hp);
-                    $(this).animate({top: "40px"});
+                    $(this).append();
+                    $(this).animate({top: "50px"});
                     $(this).prop("disabled",true);
                 }
                 else if ((i+1) != playerChar.val) {
-                    $("#"+(i+1)).animate({top: "240px", });
+                    $("#"+(i+1)).animate({top: "260px", left: "0px" });
                 }
             }
-            $("#head1").animate({bottom: "170px"});
-            $("#head2").animate({bottom: "70px"});
-            $("#head3").animate({top: "15px"});
+            $("#head1").animate({top: "0px"});
+            $("#head2").animate({top: "150px"});
+            $("#head3").animate({top: "300px"});
+            $("#head4").animate({top: "350px"});
+            
         }
         else if (playerChar != undefined && enemyChar == undefined) {
             enemyChar = player;
-            $(this).animate({top: '500px'});
+            $(this).animate({top: '580px'});
             $(this).prop("disabled",true);
-            $(this).append("<br>" + enemyChar.hp);
             round++;
         }
         else  if (enemyChar != undefined) {
@@ -146,7 +141,7 @@ var captainPlanet = $(".captain-planet");
                             else if (enemyChar.hp <= 0 && round < 3) {
                                 document.getElementById("battletext").innerHTML = "";
                                 document.getElementById("battletext2").innerHTML = "";
-                                document.getElementById("battletext3").innerHTML = "You have defeated " + enemyChar.name + ". choose your next opponent.";
+                                document.getElementById("battletext3").innerHTML = "You have defeated " + enemyChar.name + ".<br>Choose your next opponent.";
                                 $("#"+ enemyChar.val).remove();
                                 enemyChar = undefined;
                                 var audio2 = new Audio("assets/sounds/Swing02.wav");
@@ -158,22 +153,48 @@ var captainPlanet = $(".captain-planet");
 
 </script>
 
-<button style="position: relative" value="obiWan" id="1" class="btn btn-dark btn-lg normal-button">Obi-Wan-Kenobi<br><img src="assets/images/ObiWan.PNG"></button>
-<button style="position: relative" value ="luke" id="2" class="btn btn-dark btn-lg normal-button">Luke Skywalker<br><img src="assets/images/LukeSkywalker.png"></button>
-<button style="position: relative" value ="vader" id="3" class="btn btn-dark btn-lg normal-button">Darth Vader<br><img src="assets/images/DarthVader.PNG"></button>
-<button style="position: relative" value ="maul" id="4" class="btn btn-dark btn-lg normal-button">Darth Maul<br><img src="assets/images/DarthMaul.PNG"></button>
-
-<h1 id="head1" style="position: relative" >Your character</h1>
-<br>
-<h1 id="head2" style="position:relative">Enemies available to attack</h1>
-<br>
-<h1 id="head3" style="position:relative">Fight section</h1>
-<button value="fight" class="btn bth-dark btn-lg fight-button">attack!</button>
-<h1 id="head4">Defender</h1>
-<br>
-<div id="battletext"></div>
-<div id="battletext2"></div>
-<div id="battletext3"></div>
-<button id="goBack"><a href="Port.html">Go Back</a></button>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <button value="obiWan" id="1" class="normal-button">Obi-Wan-Kenobi<br><img src="assets/images/ObiWan.PNG"><br>120</button>
+        </div>
+        <div class="col-2">
+            <button value ="luke" id="2" class="normal-button">Luke Skywalker<br><img src="assets/images/LukeSkywalker.png"><br>140</button>
+        </div>
+        <div class="col-2">
+            <button value ="vader" id="3" class="normal-button">Darth Vader<br><img src="assets/images/DarthVader.PNG"><br>160</button>
+        </div>
+        <div class="col-2">
+            <button value ="maul" id="4" class="normal-button">Darth Maul<br><img src="assets/images/DarthMaul.PNG"><br>150</button>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="text-light h1" id="head1">Your character</h1>
+    </div>
+    <div class="row">
+        <h1 class="text-light h1" id="head2">Enemies available to attack</h1>
+    </div>
+    <div class ="row">
+        <h1 class="text-light h1" id="head3">Fight section</h1>
+    </div>
+    <div class="row">
+        <button value="fight" class="btn bth-dark btn-lg fight-button">attack!</button>
+    </div>
+    <div class="row">
+        <h1 class="text-light h1" id="head4">Defender</h1>
+    </div>
+    <div class="row">   
+        <div class="battletexting" id="battletext"></div>
+    </div>
+    <div class="row">
+        <div class="battletexting" id="battletext2"></div>
+    </div>
+    <div class="row">
+        <div class="battletexting" id="battletext3"></div>
+    </div>
+    <div class="row">
+        <button class="btn bth-light" id="goBack"><a href="Port.html">Go Back</a></button>
+    </div>
+</div>
 </body>
 </html>

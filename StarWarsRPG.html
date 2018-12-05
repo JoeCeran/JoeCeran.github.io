@@ -64,7 +64,7 @@ $(document).ready(function() {
             for (var i = 0; i < 4; i++) {
                 if ((i+1) == playerChar.val) {
                     $(this).append();
-                    $(this).animate({top: "50px"});
+                    $(this).animate({top: "50px", left: '0px'});
                     $(this).prop("disabled",true);
                 }
                 else if ((i+1) != playerChar.val) {
@@ -116,36 +116,43 @@ $(document).ready(function() {
                 playerChar.attack += 10;
                 
                 if (round === 3 && enemyChar.hp <= 0) {
+                
                 document.getElementById("battletext").innerHTML = "";
                 document.getElementById("battletext2").innerHTML = "";
                 document.getElementById("battletext3").innerHTML = "You have won the game!!!";
                 var audio2 = new Audio("assets/sounds/Swing02.wav");
                 audio2.play();
-                $("#"+ enemyChar.val).remove();
+                $("#" + enemyChar.val).animate({opacity: "0"});
+                //$("#"+ enemyChar.val).remove();
                 }
                     if (playerChar.hp <= 0 && enemyChar.hp <= 0) {
                         document.getElementById("battletext").innerHTML = "";
                         document.getElementById("battletext2").innerHTML = "";
                         document.getElementById("battletext3").innerHTML = "Double Knockout!!";
-                        $("#"+ playerChar.val).remove();
-                        $("#"+ enemyChar.val).remove();
+                        $("#" + playerChar.val).animate({opacity: "0"});
+                        $("#" + enemyChar.val).animate({opacity: "0"});
+                        //$("#"+ playerChar.val).remove();
+                        //$("#"+ enemyChar.val).remove();
                         }
                         else if (playerChar.hp <= 0) {
+
                             document.getElementById("battletext").innerHTML = "";
                             document.getElementById("battletext2").innerHTML = "";
                             document.getElementById("battletext3").innerHTML = "You lose! Game over!";
-                            $("#"+ playerChar.val).remove();
+                            //$("#"+ playerChar.val).remove();
                             var audio2 = new Audio("assets/sounds/Swing02.wav");
                             audio2.play();
+                            $("#" + playerChar.val).animate({opacity: "0"});
                         }
                             else if (enemyChar.hp <= 0 && round < 3) {
+                                $("#" + enemyChar.val).animate({opacity: "0"});
                                 document.getElementById("battletext").innerHTML = "";
                                 document.getElementById("battletext2").innerHTML = "";
                                 document.getElementById("battletext3").innerHTML = "You have defeated " + enemyChar.name + ".<br>Choose your next opponent.";
-                                $("#"+ enemyChar.val).remove();
-                                enemyChar = undefined;
                                 var audio2 = new Audio("assets/sounds/Swing02.wav");
                                 audio2.play();
+                                //$("#"+ enemyChar.val).remove();
+                                enemyChar = undefined;
                             }                
             }
     });      

@@ -1,8 +1,8 @@
 var questions = {
     Questions: [{
-    question: "What is the strongest Z figher?",
-    title: "The strongest Z warrior is: ",
-    items: ["Son Goku", "Vegeta", "Trunks", "Son Gohan", "Piccolo"]
+    question: "What is the name of Yamaha's FM synthesizer released in 1983?",
+    title: "Released in 1983, the name of Yamaha's FM synthesizer is the: ",
+    items: ["DX7", "M1", "D50", "Juno 106", "MS20"]
     },
     {
     question: "Who is the strongest in One Piece??",

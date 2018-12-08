@@ -1,18 +1,18 @@
 var questions = {
     Questions: [{
-    question: "What is the strongest Z figher?",
-    title: "The strongest Z warrior is: ",
-    items: ["Son Goku", "Vegeta", "Trunks", "Son Gohan", "Piccolo"]
+    question: "What is the name of Yamaha's FM synthesizer released in 1983?",
+    title: "Released in 1983, the name of Yamaha's FM synthesizer is the: ",
+    items: ["DX7", "M1", "D50", "Juno 106", "MS20"]
     },
     {
-    question: "Who is the strongest in One Piece??",
-    title: "The strongest in One Piece is: ",
-    items: ["Nami", "Luffy", "Robin", "Zoro", "Sanji"]
+    question: "Released in 1970, this Moog synth has been used by Kraftwerk, Gary Numan, and 808 State",
+    title: "The Moog synth is the: ",
+    items: ["Micromoog", "Minimoog", "Voyager", "MS20", "Jupiter 8"]
     },
     {
-    question: "Which is the best Gundam series???",
-    title: "The best Gundam series is: ",
-    items: ["Seed", "Wing", "G", "Zeta", "0079"]
+    question: "What synthesizer was used on Duran Duran's Save A Prayer?",
+    title: "The synthesizer used was the : ",
+    items: ["Juno 106", "Jupiter 6", "Juno 6", "D50", "Jupiter 8"]
     }]
 }
 var Goku;
@@ -53,7 +53,7 @@ function decrement() {
 }
 //code for writing out the questions 
 function questioned() {
-    document.getElementById("show-questions").innerHTML = "<h2>" + questions.Questions[round].title + "</h2><br>";
+    document.getElementById("show-questions").innerHTML = "<h2>" + questions.Questions[round].question + "</h2><br>";
     for (var i = 0; i < questions.Questions[round].items.length; i++) {
         var questionBtn = $("<button>");
         questionBtn.addClass("btn btn-lg normal-button");
@@ -159,10 +159,10 @@ clickOn();
 startEd = false;
 } 
 //code for if the game has ended
-else if (startEd == false && round == 3) {
+else if ( round == 3) {
     score();
     clickOn();
-    document.getElementById("show-img").src = "assets/images/Win.png";4
+    document.getElementById("show-img").src = "assets/images/Win.png";
     document.getElementById("show-questions").innerHTML = "";
     document.getElementById("show-number").innerHTML = "";
     var audio2 = new Audio("assets/sounds/Win.mp3");

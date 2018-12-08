@@ -159,7 +159,7 @@ clickOn();
 startEd = false;
 } 
 //code for if the game has ended
-else if ( round == 3) {
+else if ( startED == false && round == 3) {
     score();
     clickOn();
     document.getElementById("show-img").src = "assets/images/Win.png";

@@ -2,62 +2,107 @@
 <html lang="en-us">
 
         <head>
-                <meta charset="UTF-8">
-                <title>About</title>
-                <link rel="stylesheet" media="screen and (min-width: 900px)" type="text/css" href="assets/css/largestyle.css">
-                <link rel="stylesheet" media="screen and (max-width: 768px)" type="text/css" href="assets/css/medstyle.css">
-                <link rel="stylesheet" media="screen and (max-width: 640px)" type="text/css" href="assets/css/smallstyle.css">
-              </head>
+  
+<meta charset="UTF-8">
+    <title>Joe's Portpholio</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato|Libre+Baskerville|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        
+</head>
 
 <body>
-    <header>
-            <div class="nav">
+    
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="mx-auto order-0">
+                    <a class="navbar-brand mx-auto" href="#">Joe Cerankowski</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="AboutMe" href="#">About Me</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Portpholio</a>
+                              
+                                    <div class="dropdown-menu dropdownbar" id="dropdownbar" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item Javascript" href="#">Javascript</a>
+                                            <a class="dropdown-item" href="#">Python</a>
+                                    </div>
+                                    
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" id="ContactMe" href="#">Contact Me</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Additional Links</a>
+                                  
+                                        <div class="dropdown-menu dropdownbar" id="dropdownbar" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item Javascript" id="Resume" href="https://docs.google.com/document/d/19ikRE4aMQtUY8jN516aBRn1dsmt4Kr0_gv-Gzp4NAu4/edit?usp=sharing">Resume</a>
+                                        </div>
+                                        
+                            </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+        <div class="container col-md-6 offset-md-3">
+            <div class="row bubble">
+                <div class="main message">
+                </div>
                 </div> 
-</header>
+            </div>
+        </div>
+
+              
+                            
+
+        <div class="bimg" id="bimg"></div>
 
 
-    <div class="head">
-        Joe Cerankowski
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                    <a href="https://www.linkedin.com/in/joseph-cerankowski-692257104/">
+                                <img src="assets/images/Linkedin.PNG" class="linkIcon">
+                    </a>
+            </div>     
+            <div class="col-md-2">       
+            <a href="https://github.com/JoeCeran">
+                            <img src="assets/images/Github.PNG" class="linkIcon">
+                    </a>
+            </div>
+            <div class="col-md-4">
+                <span class="text-muted footer2">
+                    Joe Cerankowski ©(2019) 
+                </span>
+            </div>
+            <div class="col-md-2">       
+                    <a href="https://github.com/JoeCeran">
+                                    <img src="assets/images/instagram.PNG" class="linkIcon">
+                            </a>
+                </div>
+            <div class="col-md-2">       
+                            <a href="https://github.com/JoeCeran">
+                                            <img src="assets/images/googleplus.PNG" class="linkIcon">
+                                    </a>
+            </div>
+        </div>
     </div>
+</footer>
 
-    
-    <div class="navbar">
-        
-        <li class="last-child"><a href="index.html">About</a></li>
-            <li><a href="Port.html">Portfolio</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-           
-       
-    </div>
-    </div>
+<script src="assets/javascript/main.js"></script>
 
-    <div class="main">
-        <h1>
-            About Me
-        </h1>
-        <hr>
-        <img id="photo" src="https://www.ice-energy.com/wp-content/uploads/2016/03/header-home.jpg">
-        <p> Lorem ipsum augue metus fringilla donec quis dictum ipsum suspendisse, vivamus senectus elementum bibendum 
-        placerat donec nostra suscipit imperdiet condimentum, aptent praesent taciti sagittis sodales consectetur cras 
-        luctus tempus ad proin cursus in justo habitant. </p>
-        <p>
-                Aliquam eget neque curae id aliquet sagittis quisque dui, libero condimentum nunc rutrum 
-                habitant placerat adipiscing quisque lobortis, ut malesuada ligula nulla varius habitant nam neque 
-                ad augue pretium dictumst pretium tellus metus sagittis.
-        </p>
-        <p>Lorem ipsum augue metus fringilla donec quis dictum ipsum suspendisse, vivamus senectus elementum bibendum 
-        placerat donec nostra suscipit imperdiet condimentum, aptent praesent taciti sagittis sodales consectetur cras 
-        luctus tempus ad proin cursus in justo habitant. </p>
-        <p>
-                Aliquam eget neque curae id aliquet sagittis quisque dui, libero condimentum nunc rutrum 
-                habitant placerat adipiscing quisque lobortis, ut malesuada ligula nulla varius habitant nam neque 
-                ad augue pretium dictumst pretium tellus metus sagittis.
-        </p>
-    </div>
-
-
-    <footer>
-            Copyright @ 2018
-    </footer>
-    
 </body>
+</html>

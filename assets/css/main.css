@@ -181,8 +181,12 @@ h1 {
     width: 50px;
 }
 
+textarea {
+    width: 600px;
+}
+
 input {
-    width: 100%;
+    width: 600px;
 }
 
 .text-block {
@@ -198,4 +202,8 @@ input {
     line-height: 40px;
     border-radius: 15px;
     opacity: .8;
+}
+
+#sumbit {
+    margin: 10px;
 }

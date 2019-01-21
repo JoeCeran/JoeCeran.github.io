@@ -104,6 +104,7 @@ $("#AboutMe").on("click",function() {
 $("#ContactMe").on("click",function() {
         $(".message").fadeOut(500, function() {
             $(".message").empty();
+            var form = $("<form>");
             var row = $("<div>");
             row.addClass("row");
             var row2 = $("<div>");
@@ -130,6 +131,7 @@ $("#ContactMe").on("click",function() {
             var col8 = $("<div>");
             var col9 = $("<div>");
             var hr = $("<hr>");
+          
             col.addClass("col-md-2");
             col2.addClass("col-md-12");
             col3.addClass("col-md-12");
@@ -153,12 +155,24 @@ $("#ContactMe").on("click",function() {
             emailHead.text("Email");
             messageHead.text("Message");
             button.text("submit");
-            $(".message").append(row).append(hr).append(row2).append(row3).append(row4).append(row5).append(row6).append(row7).append(row8);
-            $(row).append(col).append(col2);
-
+            button.attr("id", "submit");
+            $(".message").append(row).append(hr).append(form).append(row2).append(row3).append(row4).append(row5).append(row6).append(row7).append(row8);
+            $(row).append(col2);
             $(col2).append(header);
             $(row2).append(col3);
-            $(col3).append(message);
+            $(col3).append(nameHead);
+            $(row3).append(col4);
+            $(col4).append(name);
+            $(row4).append(col5);
+            $(col5).append(emailHead);
+            $(row5).append(col6);
+            $(col6).append(email);
+            $(row6).append(col7);
+            $(col7).append(messageHead);
+            $(row7).append(col8);
+            $(col8).append(message);
+            $(row8).append(col9);
+            $(col9).append(button);
             $(".message").fadeIn(500);
     });
 });

@@ -203,8 +203,8 @@ $(".Javascript").on("click",function() {
         imageLink3.text("Github link");
         imageTitle2.text("RPG-Game");
         imageTitle3.text("Trivia-Game");
-        image2.attr("src","../images/RPG.png");
-        image3.attr("src","../images/Trivia.png");
+        image2.attr("src","https://github.com/JoeCeran/joeceran.github.io/blob/master/assets/images/RPG.png");
+        image3.attr("src","https://github.com/JoeCeran/joeceran.github.io/blob/master/assets/images/Trivia.png");
         header.text("Portpholio: Javascript Projects");
         $(".message").append(row).append(hr).append(row2).append(hr2).append(row3);
         $(row).append(col2);

@@ -1,39 +1,9 @@
 
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyCkRM_8C5obGVgwlWk87Oen6gpaA475yBE",
-    authDomain: "rutgersinfocities.firebaseapp.com",
-    databaseURL: "https://rutgersinfocities.firebaseio.com",
-    projectId: "rutgersinfocities",
-    storageBucket: "rutgersinfocities.appspot.com",
-    messagingSenderId: "763372287123"
-  };
-  firebase.initializeApp(config);
-  var database = firebase.database();
-
 var intervalId;
 var number = 10;
-var city;
-var user = {
-    username: "",
-    password: ""
-}
 var projects = ["Word Game", "Star Wars RPG", "Trivia Game", "GifTastic", "Train Schedule", "InfoCities"];
 
-var user = firebase.auth().currentUser;
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-      console.log(user.displayName);
-      $(".signIn").addClass("d-none");
-      $(".signIn").removeClass("d-inline");
-      $(".register").addClass("d-none");
-      $(".register").removeClass("d-inline");
-      $("#profileLink").text(user.displayName);
-      $("#userName").text("Hello, " + user.displayName);
-      $("#profileLink").removeClass("d-none");
-      uid = user.uid;
-  }
-})
+
 
 $(document).ready(function() {
 
@@ -233,8 +203,8 @@ $(".Javascript").on("click",function() {
         imageLink3.text("Github link");
         imageTitle2.text("RPG-Game");
         imageTitle3.text("Trivia-Game");
-        image2.attr("src","/assets/images/RPG.png");
-        image3.attr("src","/assets/images/Trivia.png");
+        image2.attr("src","../images/RPG.png");
+        image3.attr("src","../images/Trivia.png");
         header.text("Portpholio: Javascript Projects");
         $(".message").append(row).append(hr).append(row2).append(hr2).append(row3);
         $(row).append(col2);
@@ -282,7 +252,7 @@ else if (number === 6){
 }
 else if (number === 3){
     $(".bimg").fadeOut(500, function() {
-        $(".bimg").css("background", "url('/assets/images/Image3.jpg')");
+        $(".bimg").css("background", "url('../assets/images/Image3.jpg')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");

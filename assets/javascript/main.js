@@ -241,7 +241,7 @@ if (number === 10) {
 }
 else if (number === 6){
     $(".bimg").fadeOut("slow", function() {
-        $(".bimg").css("background", "url('/assets/images/Image2.png')");
+        $(".bimg").css("background", "url('../assets/images/Image2.png')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");

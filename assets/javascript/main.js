@@ -196,7 +196,7 @@ $(".Javascript").on("click",function() {
         var header = $("<h1>");
         var breaker = $("<br>");
         header.attr("id","Header");
-        image.attr("src","/assets/images/Word.png");
+        image.attr("src","https://github.com/JoeCeran/joeceran.github.io/blob/master/assets/images/Word.png");
         imageTitle.text("Word-Game");
         imageLink.text("Github link");
         imageLink2.text("Github link");

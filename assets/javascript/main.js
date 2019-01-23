@@ -131,7 +131,6 @@ $("#ContactMe").on("click",function() {
             var col8 = $("<div>");
             var col9 = $("<div>");
             var hr = $("<hr>");
-          
             col.addClass("col-md-2");
             col2.addClass("col-md-12");
             col3.addClass("col-md-12");
@@ -195,28 +194,43 @@ $(".Javascript").on("click",function() {
         var hr = $("<hr>");
         var hr2 = $("<hr>");
         col.addClass("col-md-2");
-        col2.addClass("col-md-12 offset-md-1");
+        col2.addClass("col-md-12 ");
         col3.addClass("col-md-5 offset-md-1");
         col4.addClass("col-md-4 offset-md-1");
         col5.addClass("col-md-5 offset-md-1");
         var image = $("<img>");
-        var imageTitle = $("<div>");
-        var imageTitle2 = $("<div>");
-        var imageTitle3 = $("<div>");
+        var imageTitle = $("<a>");
+        var imageLink = $("<a>");
+        var imageTitle2 = $("<a>");
+        var imageLink2 = $("<a>");
+        var imageTitle3 = $("<a>");
+        var imageLink3 = $("<a>");
         var image2 = $("<img>");
         var image3 = $("<img>");
         var image4 = $("<img>");
-        image.addClass("JoeImg");
-        imageTitle.addClass("text-block");
-        imageTitle2.addClass("text-block");
-        imageTitle3.addClass("text-block");
-        image2.addClass("JoeImg");
-        image3.addClass("JoeImg");
+        image.addClass("LinkImg");
+        imageTitle.addClass("btn btnLink");
+        imageLink.addClass("btn btnLink");
+        imageTitle.attr("href", "https://joeceran.github.io/WordGame/WordGuessingGame.html")
+        imageLink.attr("href", "https://github.com/JoeCeran/WordGame/")
+        imageTitle2.addClass("btn btnLink");
+        imageLink2.addClass("btn btnLink");
+        imageTitle2.attr("href", "https://joeceran.github.io/StarWarsRPG/StarWarsRPG.html")
+        imageLink2.attr("href", "https://github.com/JoeCeran/StarWarsRPG")
+        imageTitle3.addClass("btn btnLink");
+        imageLink3.addClass("btn btnLink");
+        imageTitle3.attr("href", "https://joeceran.github.io/TriviaGame/TriviaGame.html")
+        imageLink3.attr("href", "https://github.com/JoeCeran/TriviaGame/")
+        image2.addClass("LinkImg");
+        image3.addClass("LinkImg");
         var header = $("<h1>");
         var breaker = $("<br>");
         header.attr("id","Header");
         image.attr("src","assets/images/Word.PNG");
         imageTitle.text("Word-Game");
+        imageLink.text("Github link");
+        imageLink2.text("Github link");
+        imageLink3.text("Github link");
         imageTitle2.text("RPG-Game");
         imageTitle3.text("Trivia-Game");
         image2.attr("src","assets/images/RPG.PNG");
@@ -227,10 +241,10 @@ $(".Javascript").on("click",function() {
         $(col).append(image);
         $(col2).append(header);
         $(row2).append(col3).append(col4);
-        $(col3).append(image).append(imageTitle);
-        $(col4).append(image2).append(imageTitle2);
+        $(col3).append(image).append(imageTitle).append(imageLink);
+        $(col4).append(image2).append(imageTitle2).append(imageLink2);
         $(row3).append(col5);
-        $(col5).append(image3).append(imageTitle3);
+        $(col5).append(image3).append(imageTitle3).append(imageLink3);
         $(".message").fadeIn(500);
     });
 });
@@ -246,7 +260,7 @@ function decrement() {
 number--;
 if (number === 10) {
     $(".bimg").fadeOut(500, function() {
-    $(".bimg").css("background", "url('assets/images/philadelphiaphoto.PNG')");
+    $(".bimg").css("background", "url('assets/images/Image1.PNG')");
     $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");
@@ -257,7 +271,7 @@ if (number === 10) {
 }
 else if (number === 6){
     $(".bimg").fadeOut("slow", function() {
-        $(".bimg").css("background", "url('assets/images/newyorkphoto.jpg')");
+        $(".bimg").css("background", "url('assets/images/Image2.PNG')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");
@@ -268,7 +282,7 @@ else if (number === 6){
 }
 else if (number === 3){
     $(".bimg").fadeOut(500, function() {
-        $(".bimg").css("background", "url('assets/images/chicagophoto.png')");
+        $(".bimg").css("background", "url('assets/images/Image3.JPG')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");

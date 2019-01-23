@@ -226,14 +226,14 @@ $(".Javascript").on("click",function() {
         var header = $("<h1>");
         var breaker = $("<br>");
         header.attr("id","Header");
-        image.attr("src","../images/Word.PNG");
+        image.attr("src","/assets/images/Word.PNG");
         imageTitle.text("Word-Game");
         imageLink.text("Github link");
         imageLink2.text("Github link");
         imageLink3.text("Github link");
         imageTitle2.text("RPG-Game");
         imageTitle3.text("Trivia-Game");
-        image2.attr("src","../assets/images/RPG.PNG");
+        image2.attr("src","/assets/images/RPG.PNG");
         image3.attr("src","/assets/images/Trivia.PNG");
         header.text("Portpholio: Javascript Projects");
         $(".message").append(row).append(hr).append(row2).append(hr2).append(row3);

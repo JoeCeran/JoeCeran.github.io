@@ -260,7 +260,7 @@ function decrement() {
 number--;
 if (number === 10) {
     $(".bimg").fadeOut(500, function() {
-    $(".bimg").css("background", "url('/assets/images/Image1.PNG')");
+    $(".bimg").css("background", "url('/assets/images/Image1.png')");
     $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");
@@ -271,7 +271,7 @@ if (number === 10) {
 }
 else if (number === 6){
     $(".bimg").fadeOut("slow", function() {
-        $(".bimg").css("background", "url('/assets/images/Image2.PNG')");
+        $(".bimg").css("background", "url('../images/Image2.png')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");
@@ -282,7 +282,7 @@ else if (number === 6){
 }
 else if (number === 3){
     $(".bimg").fadeOut(500, function() {
-        $(".bimg").css("background", "url('/assets/images/Image3.JPG')");
+        $(".bimg").css("background", "url('/assets/images/Image3.jpg')");
         $(".bimg").css("background-position", "center");
         $(".bimg").css("background-repeat", "no-repeat");
         $(".bimg").css("background-size", "cover");

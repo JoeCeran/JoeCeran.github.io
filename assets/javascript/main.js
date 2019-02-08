@@ -205,7 +205,7 @@ $(".Javascript").on("click",function() {
         imageTitle3.text("Trivia-Game");
         image2.attr("src","../assets/images/RPG.png");
         image3.attr("src","../assets/images/Trivia.png");
-        header.text("Portpholio: Javascript Projects");
+        header.text("Portfolio: Javascript Projects");
         $(".message").append(row).append(hr).append(row2).append(hr2).append(row3);
         $(row).append(col2);
         $(col).append(image);

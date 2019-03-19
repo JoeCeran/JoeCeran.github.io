@@ -25,6 +25,12 @@ body {
     border-radius: 50px;
 }
 
+.carousel-caption {
+    background-color: rgb(43, 41, 41);
+    border-radius: 50px;
+    max-width: 300px;
+}
+
 .cert {
     height: 150px;
     width: 150px;

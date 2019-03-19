@@ -25,6 +25,18 @@ body {
     border-radius: 50px;
 }
 
+.cert {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    display: inline;
+}
+
+.cert:hover {
+    -webkit-animation: pulse 0.5s;
+    animation: pulse 0.5s;
+}
+
 
 
 h1 {
@@ -36,6 +48,15 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     color: white;
     padding-top: 100px;
+    margin: 50px;
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 2s;
+}
+
+.header2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    
     margin: 50px;
     -webkit-animation: fadeIn 2s;
     animation: fadeIn 2s;

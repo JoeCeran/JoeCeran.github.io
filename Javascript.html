@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+        <head>
+  
+<meta charset="UTF-8">
+    <title>Joe's Portfolio</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Lato|Libre+Baskerville|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+        
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-md navbar-transparent">
+                <div class="mx-auto order-0">
+                    <a class="navbar-brand mx-auto" href="index.html">Joe Cerankowski</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                </div>
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                    <ul class="navbar-nav ml-1">
+                        <li class="nav-item">
+                            <a class="nav-link" id="AboutMe" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Portfolio</a>
+                                <div class="dropdown-menu dropdownbar" id="dropdownbar" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item Javascript" href="Javascript.html">Javascript</a>
+                                    <a class="dropdown-item" href="Python.html">Python</a>
+                                </div>           
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" id="ContactMe" href="IT.html">IT Experience</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" id="ContactMe" href="contact.html">Contact</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Additional Links</a>
+                                        <div class="dropdown-menu dropdownbar" id="dropdownbar" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item Javascript" id="Resume" href="Resume.pdf">Resume</a>
+                                        </div>             
+                                </li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" id="AboutMe" href="https://www.linkedin.com/in/joseph-cerankowski-692257104/"><img class="icon" src="assets/images/Linkedin.png"></a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" id="AboutMe" href="https://github.com/JoeCeran"><img class="icon" src="assets/images/Github.png"></a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" id="AboutMe" href="about.html"><img class="icon" src="assets/images/instagram.png"></a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" id="AboutMe" href="about.html"><img class="icon" src="assets/images/googleplus.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+            <hr>
+
+  
+    <div class="container col-md-6 offset-md-3">
+            <h1 class="header">Javascript Applications</h1>
+        
+          
+        </div>
+
+            <div id="carouselExampleControls" class="carousel slide offset-sm-3" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 carousel-innerimg" src="assets/images/Image1.png"
+                            alt="First slide">
+                            <div class="carousel-caption">
+                                    <h3>InfoCities</h3>
+                                    <p>Look up info for your destinations!</p>
+                                    <a href="http://Boc4life.github.io/ProjectOne">Application Link</a>
+                                    <br>
+                                    <a href="https://github.com/boc4life/ProjectOne">Github Repository Link</a>
+                                    </div>   
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-innerimg" src="assets/images/Image2.png"
+                            alt="Second slide">
+                            <div class="carousel-caption">
+                                    <h3>London Theaters Plus</h3>
+                                    <p>While you're in london, check out a show!</p>
+                                    <a href="https://nameless-everglades-50094.herokuapp.com/">Application Link</a>
+                                    <br>
+                                    <a href="https://github.com/Ilene0413/events">Github Repository Link</a>
+                                    </div> 
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-innerimg" src="assets/images/Image3.jpg"
+                            alt="Third slide">
+                            <div class="carousel-caption">
+                                    <h3>Burger</h3>
+                                    <p>Little project using handlebars.js!</p>
+                                    <a href="https://burgering.herokuapp.com/">Application Link</a>
+                                    <br>
+                                    <a href="https://github.com/JoeCeran/Burger">Github Repository Link</a>
+                                    </div>   
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+      
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span>
+                            Joe Cerankowski ©(2019) 
+                    </span>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+</body>
+</html>
